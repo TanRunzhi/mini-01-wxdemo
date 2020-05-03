@@ -1,0 +1,103 @@
+<!--pages/demo01/demo01.wxml-->
+  <!-- <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+   <view>
+    <text class="user-motto">{{obj.code}}\n</text>
+    <text class="user-motto">{{obj.name}}\n</text>
+    <text class="user-motto">{{'1' === 1}}\n</text>
+  </view> -->
+  <!-- checkbox -->
+   <view>
+    <checkbox checked="true">click me</checkbox> 
+  </view>
+  <!-- for循环 数组
+      wx:for    -item和-index可以省略，系统默认为item,indexs
+      wx:key = 属性(属性值为数字时候使用)  或 *this(属性值为字符串时候使用) 
+    for循环 对象
+      -index为key，-item 为value
+  -->
+  <!-- <view >
+    <view wx:for='{{list}}' wx:for-item='item' wx:for-index='index'  wx:key='id'>
+      {{index}} - {{item.code}} : {{item.name}}
+    </view>
+  </view> -->
+  <!-- block标签  占位用  实际渲染会移除标签  -->
+  <!-- <view >
+    block : 
+    <block class='my_list' wx:for='{{list}}' wx:for-item='item' wx:for-index='index'  wx:key='id'>
+      {{index}} - {{item.code}} : {{item.name}}
+    </block>
+  </view> -->
+
+  <!-- if 显示与是直接添加和移除  -->
+  <view wx:if='{{true}}'>
+    <!--  -->
+    <!-- <view wx:if='{{true}}'>if -true</view>
+    <view wx:if='{{false}}'>if - false</view> -->
+    <!-- if else -->
+    <!-- <view wx:if='{{false}}'>if else1 </view>
+    <view wx:elif='{{false}}'>if else2  </view>
+    <view wx:else>if else - other</view> -->
+  </view>
+  <!-- <view>--------------------</view> -->
+
+  <!-- hidden 显示与否是关联样式 -->
+  <!-- <view hidden> hidden no val </view>
+  <view hidden='{{true}}'> hidden = true </view>
+  <view hidden='{{false}}'> hidden = false </view>
+  <view>--------------------</view> -->
+
+  <!-- 
+    input 
+      bindinput : 约等于 onChange
+    button
+      bindtap : onclick
+  -->
+  <view id='buttonClick'>
+    <input type="text" bindinput="handleInput" id='input1' name='code' value="{{num}}" />
+    <button bindtap="handleTap" data-op='{{1}}'> + </button>
+    <button bindtap="handleTap" data-op='{{-1}}'> - </button>
+    <view >{{num}}</view>
+  </view>
+
+  <!-- wxss -->
+  <!-- <view class='wxss'>
+  </view> -->
+
+  <!-- import wxss -->
+  <!-- <view class='importWxss'>
+    import wxss
+  </view> -->
+
+<!-- 长按文本复制 selectable ; 是否解码 decode -->
+  <!-- <view >
+    <text selectable>长按复制我</text>
+    <text> &gt;</text>
+    <text decode > &gt;</text>
+  </view> -->
+  
+  <!-- image 默认 320 * 140 -->
+  <view>
+    <image class='bg' src="/images/miku.jpg"/>
+  </view>
+
+  <view>--------------------</view>
+   <!-- 图片轮播 swiper 默认150px高度 -->
+  <view >
+    <text>图片轮播</text>
+    <swiper id="mySwiper" autoplay interval="2000" circular='true' indicator-dots='true' >
+     <swiper-item> <image mode="widthFix" src="//i0.hdslb.com/bfs/archive/1b6db29c19a787122ab227baff9fc21abb1fe12a.png@880w_388h_1c_95q"/></swiper-item>
+     <swiper-item> <image mode="widthFix" src="//i0.hdslb.com/bfs/sycp/creative_img/202004/bb30e2a39673d7834bab843a6e004126.jpg@880w_388h_1c_95q"/></swiper-item>
+     <swiper-item> <image mode="widthFix" src="//i0.hdslb.com/bfs/archive/dc6acb7894edd5efbe27eb523a1c3a2fc4ba2462.jpg@880w_388h_1c_95q"/></swiper-item>
+     <swiper-item> <image mode="widthFix" src="//i0.hdslb.com/bfs/archive/ea96a6ddc497183b95e7fa0023e6131d078276af.jpg@880w_388h_1c_95q"/></swiper-item>
+     <swiper-item> <image mode="widthFix" src="//i0.hdslb.com/bfs/archive/bb215ca703a44ab41b7e0403e72cf557454ae4a1.jpg@880w_388h_1c_95q"/></swiper-item>
+    </swiper>
+  </view>
+
+  <!-- navigator  同web的 a , 但是相当于块元素  会换行  可加宽高 -->
+  <view>--------------------</view>
+  <view> 
+    <navigator url="/pages/index2/index2"  > 一个navigator（a链接）</navigator>
+  </view>
+ 
